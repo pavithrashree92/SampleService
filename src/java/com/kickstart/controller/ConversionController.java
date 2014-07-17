@@ -11,25 +11,20 @@ public class ConversionController {
 
     public String convertInchToFeet(Request request,Response response) {
 
-        int inch= Integer.parseInt(request.getRawHeader("value"));
+        int inch= Integer.parseInt(request.getUrlDecodedHeader("value"));
+
         double feet = 0;
         feet =(double) inch/12;
 
-        return "<InchToFeetService>"
-                + "<Inch>" + inch + "</Inch>"
-                + "<Feet>" + feet + "</Feet>"
-                + "</InchToFeetService>";
+        return inch +"inch = " + feet+"feet!" ;
     }
 
     public String convertFeetToInch(Request request,Response response) {
         int inch=0;
-        int feet =Integer.parseInt(request.getRawHeader("value"));
+        int feet =Integer.parseInt(request.getUrlDecodedHeader("value"));
         inch = 12*feet;
 
-        return "<FeetToInchService>"
-                + "<Feet>" + feet + "</Feet>"
-                + "<Inch>" + inch + "</Inch>"
-                + "</FeetToInchService>";
+        return  feet+"feet = "+inch +"inches !";
     }
 
 

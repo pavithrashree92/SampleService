@@ -11,8 +11,10 @@ public class UsersController {
 
     public String read(Request request, Response response)
     {
+        String value = request.getRawHeader("welcome");
         response.setResponseCreated();
         response.setContentType("text/xml");
+
       return   "WELCOME TO Restful webservice display page!!!";
     }
 
@@ -20,7 +22,7 @@ public class UsersController {
         String name=System.getProperty("user.name");
         response.setResponseCreated();
 
-        if(request.getRawHeader("name").equals(name))
+        if(request.getUrlDecodedHeader("name").equals(name))
         {
             return name;
         }

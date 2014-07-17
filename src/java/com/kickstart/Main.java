@@ -60,8 +60,8 @@ public class Main
     private static void defineRoutes(RestExpress server, Configuration config)
     {
         server.uri("/welcome", config.getUsersController())
-                .action("read", HttpMethod.GET)
-                .method(HttpMethod.POST);
+                .action("read", HttpMethod.GET);
+
 
         server.uri("/users/name/{name}.{format}", config.getUsersController())
                 .action("readAll", HttpMethod.GET);
@@ -72,8 +72,8 @@ public class Main
 
 
         server.uri("/conversion/FeetToInch/{value}.{format}", config.getConversionController())
-                .action("convertFeetToInch", HttpMethod.GET)
-                .method(HttpMethod.POST);
+                .action("convertFeetToInch", HttpMethod.GET);
+
 
 
     }
