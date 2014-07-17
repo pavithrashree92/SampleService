@@ -24,7 +24,7 @@ public class Main
 	{
         Configuration config = loadEnvironment(args);
         RestExpress server = new RestExpress()
-                .setBaseUrl("http://localhost:4040")
+               // .setBaseUrl("http://localhost:4040")
                 .setName(config.getName())
                 .setPort(config.getPort())
                 .setDefaultFormat(Format.XML)
